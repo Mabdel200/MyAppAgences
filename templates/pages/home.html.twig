@@ -1,0 +1,31 @@
+    {%  extends 'base.html.twig' %}
+
+    {% block    title 'Agence bini' %}
+
+    {% block body %}
+    <div class="jumbotron text-center">
+        <h1>Welcome  to Agence bini</h1>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem debitis dolor earum facere optio, quos tenetur. Aliquam consequuntur fuga illum impedit natus non obcaecati perspiciatis recusandae, repudiandae voluptatum. Provident, sed. </p>
+    </div>
+
+    <div class="container">
+        <h2>The Last Properties </h2>
+        <div class="row flex">
+            {% for property in properties %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('property.show', {id: property.id, slug: property.slug }) }}">{{ property.title }} </a>
+                            </h5>
+                            <p class="card-text"> {{ property.city}} ( {{ property.postalCode }} ) </p>
+                            <div class="text-danger font-weight-bold ">{{ property.formattedPrice }} FRCFA </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    {% endblock %}
