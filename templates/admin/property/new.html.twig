@@ -1,0 +1,17 @@
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="../../assets{{'/css/bootstrap.css'}}" >
+{% endblock %}
+
+{%  extends 'base.html.twig' %}
+
+    {% block    title 'Manage property' %}
+
+    {% block body %}
+
+        <div class="container mt-4">
+            <h2>Add new property </h2>
+            {{  include('admin/property/_form.html.twig', {form: form, button: 'Save properties'})  }}
+        </div>
+        <br>
+
+    {% endblock %}

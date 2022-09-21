@@ -1,0 +1,34 @@
+{%  extends 'base.html.twig' %}
+
+    {% block    title 'Agence bini' %}
+
+    {% block body %}
+        <div class="jumbotron text-center">
+            <h1>Login</h1>
+        </div>
+
+        <div class="container mt-4 ">
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey | trans(error.messagedata, 'security') }}
+                </div>
+            {% endif %}
+
+            <form action="{{ path('login') }}" style="margin-left: 35%" method="post">
+                <div class="form-group col-6">
+                    <label for="username">Username</label>
+                    <input required type="text" id="username" placeholder="username" name="_username" value="{{ last_username }}"  class="form-control">
+                </div>
+                <div class="form-group col-6">
+                    <label for="password">Password</label>
+                    <input required type="password" id="password" placeholder="password" name="_password" class="form-control ">
+                </div>
+
+                <button type="submit" name="submit" class="btn btn-success text-bold mt-4">Log-in</button>
+            </form>
+        </div>
+
+        
+
+    {% endblock %}
